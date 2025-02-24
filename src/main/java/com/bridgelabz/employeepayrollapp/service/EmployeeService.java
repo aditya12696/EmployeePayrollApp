@@ -1,5 +1,6 @@
 package com.bridgelabz.employeepayrollapp.service;
 import com.bridgelabz.employeepayrollapp.Model.Employee;
+import com.bridgelabz.employeepayrollapp.dto.EmployeeDTO;
 import com.bridgelabz.employeepayrollapp.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,10 @@ public class EmployeeService {
         return employeeRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Employee not found with id: " + id));
     }
-
+    public Employee saveEmployee(EmployeeDTO employeeDTO) {
+        Employee employee = new Employee(employeeDTO);
+        return employeeRepository.save(employee);
+    }
     // Save new employee
     public Employee saveEmployee(Employee employee) {
         return employeeRepository.save(employee);
