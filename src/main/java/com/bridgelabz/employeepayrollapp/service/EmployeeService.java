@@ -32,13 +32,16 @@ public class EmployeeService {
     }
 
     // Update employee
-    public Employee updateEmployee(Long id, Employee updatedEmployee) {
-        return employeeRepository.findById(id).map(employee -> {
-            employee.setName(updatedEmployee.getName());
-            employee.setSalary(updatedEmployee.getSalary());
-            return employeeRepository.save(employee);
-        }).orElseThrow(() -> new RuntimeException("Employee not found with id: " + id));
+    public Employee updateEmployee(Long id, EmployeeDTO employeeDTO) {
+        Employee employee = employeeRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Employee not found"));
+
+        employee.setName(employeeDTO.getName());
+        employee.setSalary(employeeDTO.getSalary());
+
+        return employeeRepository.save(employee);
     }
+
 
     // Delete employee by ID
     public void deleteEmployee(Long id) {
