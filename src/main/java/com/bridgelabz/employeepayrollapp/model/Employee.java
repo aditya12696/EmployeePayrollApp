@@ -1,4 +1,4 @@
-package com.bridgelabz.employeepayrollapp.Model;
+package com.bridgelabz.employeepayrollapp.model;
 
 import com.bridgelabz.employeepayrollapp.dto.EmployeeDTO;
 import jakarta.persistence.*;

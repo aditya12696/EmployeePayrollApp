@@ -1,5 +1,5 @@
 package com.bridgelabz.employeepayrollapp.service;
-import com.bridgelabz.employeepayrollapp.Model.Employee;
+import com.bridgelabz.employeepayrollapp.model.Employee;
 import com.bridgelabz.employeepayrollapp.dto.EmployeeDTO;
 import com.bridgelabz.employeepayrollapp.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
